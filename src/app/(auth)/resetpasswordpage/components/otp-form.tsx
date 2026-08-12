@@ -41,7 +41,7 @@ export default function OtpForm({ step, setStep }: OtpFormProps) {
   const onSubmit: SubmitHandler<CodeValues> = async (values) => {
     const res = await verify(values);
     console.log(res);
-    if (res?.data?.status === "Success") {
+    if (res?.status === "Success") {
       setStep(step + 1);
     }
   };

@@ -37,7 +37,7 @@ export default function CreateNewPaswordForm() {
   const onSubmit = async (values: ResetPasswordValues) => {
     const res = await resetPassword(values);
     console.log(res);
-    if (res?.data?.message === "success") {
+    if (res?.message === "success") {
       localStorage.removeItem("email");
       navigate("/login");
     }

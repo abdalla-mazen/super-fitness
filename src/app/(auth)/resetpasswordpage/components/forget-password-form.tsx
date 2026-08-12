@@ -37,7 +37,7 @@ export default function ForgetPassword({ step, setStep }: ForgetFormProps) {
   const onSubmit = async (data: FormValues) => {
     localStorage.setItem("email", data.email);
     const res = await forget(data);
-    if (res?.data?.message === "success") {
+    if (res?.message === "success") {
       setStep(step + 1);
     }
   };
